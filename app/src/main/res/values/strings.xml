@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">Questions</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="questionPlaceholder">Waar heb je een vraag over</string>
 </resources>
