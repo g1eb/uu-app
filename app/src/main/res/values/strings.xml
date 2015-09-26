@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Questions</string>
-    <string name="questionPlaceholder">Stel hier je eigen vraag</string>
+    <string name="question_placeholder">Stel hier je eigen vraag</string>
+
+    <string name="video_placeholder">Video will be here</string>
+    <string name="btn-text-skip-video">Overslaan</string>
 </resources>
