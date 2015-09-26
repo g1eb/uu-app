@@ -3,5 +3,5 @@
     <string name="question_placeholder">Stel hier je eigen vraag</string>
 
     <string name="video_placeholder">Video will be here</string>
-    <string name="btn-text-skip-video">Overslaan</string>
+    <string name="btn_text_skip_video">Overslaan</string>
 </resources>
