@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Questions</string>
-    <string name="questionPlaceholder">Waar heb je een vraag over</string>
+    <string name="questionPlaceholder">Stel hier je eigen vraag</string>
 </resources>
