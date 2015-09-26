@@ -1,7 +1,8 @@
 package nl.utrecht.uni.questions.questions;
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class Video extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_intro, container, false);
+        return inflater.inflate(R.layout.fragment_video, container, false);
     }
 
     @Override
@@ -51,7 +52,12 @@ public class Video extends Fragment {
         getActivity().findViewById(R.id.btn_skip_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // Create new fragment and transaction
+                Fragment newFragment = new Intro();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.container, newFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
     }
