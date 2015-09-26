@@ -21,4 +21,9 @@ public class MainActivity extends AppCompatActivity {
         // Enforce landscape layout
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
