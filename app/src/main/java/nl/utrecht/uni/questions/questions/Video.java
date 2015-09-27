@@ -43,7 +43,7 @@ public class Video extends Fragment {
         getActivity().findViewById(R.id.btn_skip_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Intro();
+                Fragment newFragment = new Question();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.container, newFragment);
                 transaction.addToBackStack(null);
