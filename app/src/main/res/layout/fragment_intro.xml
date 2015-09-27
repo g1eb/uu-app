@@ -3,20 +3,21 @@
     android:id="@+id/intro_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eaeaea"
     tools:context="nl.utrecht.uni.questions.questions.Intro">
 
     <TextView
+        android:id="@+id/tempting_example_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/tempting_example_question"
-        android:layout_gravity="center_horizontal|top" />
+        android:layout_gravity="center_horizontal|top"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:text="@string/question_placeholder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center"
+        android:text="@string/question_placeholder"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
