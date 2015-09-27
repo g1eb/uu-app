@@ -10,15 +10,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class Intro extends Fragment {
 
     static final int DELAY_QUESTION = 3000; // milliseconds
     Handler mHandler;
 
+    TextView exampleQuestion;
+    String[] questions;
+    int qIndex;
+
     public static Intro newInstance() {
         Intro fragment = new Intro();
-
         return fragment;
     }
 
@@ -30,6 +34,7 @@ public class Intro extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mHandler = new Handler(Looper.getMainLooper());
+        qIndex = 0;
     }
 
     @Override
@@ -68,6 +73,10 @@ public class Intro extends Fragment {
             }
         });
 
+        // Setup tempting example question
+        questions = getResources().getStringArray(R.array.tempting_example_questions);
+        exampleQuestion = (TextView) getActivity().findViewById(R.id.tempting_example_question);
+        exampleQuestion.setText(questions[qIndex]);
         mHandler.postDelayed(changeQuestion, DELAY_QUESTION);
     }
 
@@ -80,6 +89,9 @@ public class Intro extends Fragment {
     Runnable changeQuestion = new Runnable() {
         @Override
         public void run() {
+            // Update example question
+            qIndex = ( qIndex == 5 ) ? 0 : qIndex;
+            exampleQuestion.setText(questions[qIndex++]);
             mHandler.postDelayed(this, DELAY_QUESTION);
         }
     };
