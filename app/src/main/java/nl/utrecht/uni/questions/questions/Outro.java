@@ -38,6 +38,7 @@ public class Outro extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mHandler.removeCallbacks(delayedRedirect);
     }
 
     @Override
@@ -57,7 +58,6 @@ public class Outro extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        mHandler.removeCallbacks(delayedRedirect);
     }
 
     Runnable delayedRedirect = new Runnable() {

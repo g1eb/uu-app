@@ -45,6 +45,7 @@ public class Intro extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mHandler.removeCallbacks(changeQuestion);
     }
 
     @Override
@@ -83,7 +84,6 @@ public class Intro extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        mHandler.removeCallbacks(changeQuestion);
     }
 
     Runnable changeQuestion = new Runnable() {
