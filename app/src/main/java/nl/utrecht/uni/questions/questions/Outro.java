@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 public class Outro extends Fragment {
 
-    static final int OUTRO_DELAY = 20000; // seconds
+    static final int DELAY_OUTRO = 20000; // milliseconds
     Handler mHandler;
 
     public static Outro newInstance() {
@@ -51,7 +51,7 @@ public class Outro extends Fragment {
             }
         });
 
-        mHandler.postDelayed(myTask, OUTRO_DELAY);
+        mHandler.postDelayed(myTask, DELAY_OUTRO);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class Outro extends Fragment {
         @Override
         public void run() {
             redirectToIntro();
-            mHandler.postDelayed(this, OUTRO_DELAY);
+            mHandler.postDelayed(this, DELAY_OUTRO);
         }
     };
 
