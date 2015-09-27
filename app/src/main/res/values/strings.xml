@@ -5,11 +5,13 @@
 
     <!-- Intro -->
     <string name="question_placeholder">Stel hier je eigen vraag</string>
-    <string name="question_example_1">Prikkelende voorbeeld 1</string>
-    <string name="question_example_2">Prikkelende voorbeeld 2</string>
-    <string name="question_example_3">Prikkelende voorbeeld 3</string>
-    <string name="question_example_4">Prikkelende voorbeeld 4</string>
-    <string name="question_example_5">Prikkelende voorbeeld 5</string>
+    <string-array name="tempting_example_questions">
+        <item>Prikkelende voorbeeldvraag 1</item>
+        <item>Prikkelende voorbeeldvraag 2</item>
+        <item>Prikkelende voorbeeldvraag 3</item>
+        <item>Prikkelende voorbeeldvraag 4</item>
+        <item>Prikkelende voorbeeldvraag 5</item>
+    </string-array>
 
     <!-- Video -->
     <string name="video_placeholder">Video will be here</string>
