@@ -57,11 +57,7 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
         getActivity().findViewById(R.id.btn_print).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Outro();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, newFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                redirectToOutro();
             }
         });
     }
@@ -74,5 +70,13 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    private void redirectToOutro() {
+        Fragment newFragment = new Outro();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
