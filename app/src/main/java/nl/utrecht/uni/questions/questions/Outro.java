@@ -40,7 +40,7 @@ public class Outro extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        getActivity().findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
+        getActivity().findViewById(R.id.btn_back_to_lobby).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment newFragment = new Intro();
