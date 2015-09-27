@@ -80,7 +80,6 @@ public class Intro extends Fragment {
     Runnable changeQuestion = new Runnable() {
         @Override
         public void run() {
-            Log.e("intro", "sdfasdfasd");
             mHandler.postDelayed(this, DELAY_QUESTION);
         }
     };
