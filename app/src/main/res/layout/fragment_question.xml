@@ -19,11 +19,22 @@
         android:layout_gravity="right|center_vertical"
         android:layout_marginRight="50dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|center_vertical"
+        android:background="#ffe600"
+        android:text="@string/question_mark"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:textSize="400dp" />
+
     <Button
         android:id="@+id/btn_print"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"
         android:text="@string/btn_text_print" />
+
 
 </FrameLayout>

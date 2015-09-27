@@ -19,6 +19,7 @@
 
     <!-- Question -->
     <string name="btn_text_print">Print</string>
+    <string name="question_mark">\?</string>
     <string-array name="adverbs">
         <item>Hoe</item>
         <item>Wanneer</item>
