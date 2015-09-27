@@ -51,16 +51,16 @@ public class Outro extends Fragment {
             }
         });
 
-        mHandler.postDelayed(myTask, DELAY_OUTRO);
+        mHandler.postDelayed(delayedRedirect, DELAY_OUTRO);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        mHandler.removeCallbacks(myTask);
+        mHandler.removeCallbacks(delayedRedirect);
     }
 
-    Runnable myTask = new Runnable() {
+    Runnable delayedRedirect = new Runnable() {
         @Override
         public void run() {
             redirectToIntro();
