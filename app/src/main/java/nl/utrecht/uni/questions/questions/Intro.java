@@ -1,14 +1,20 @@
 package nl.utrecht.uni.questions.questions;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 public class Intro extends Fragment {
 
+    static final int DELAY_QUESTION = 3000; // milliseconds
+    Handler mHandler;
 
     public static Intro newInstance() {
         Intro fragment = new Intro();
@@ -23,7 +29,7 @@ public class Intro extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mHandler = new Handler(Looper.getMainLooper());
     }
 
     @Override
@@ -61,5 +67,21 @@ public class Intro extends Fragment {
                 transaction.commit();
             }
         });
+
+        mHandler.postDelayed(changeQuestion, DELAY_QUESTION);
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        mHandler.removeCallbacks(changeQuestion);
+    }
+
+    Runnable changeQuestion = new Runnable() {
+        @Override
+        public void run() {
+            Log.e("intro", "sdfasdfasd");
+            mHandler.postDelayed(this, DELAY_QUESTION);
+        }
+    };
 }
