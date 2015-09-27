@@ -2,17 +2,21 @@ package nl.utrecht.uni.questions.questions;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 public class Outro extends Fragment {
 
+    static final int OUTRO_DELAY = 20000; // seconds
+    Handler mHandler;
 
     public static Outro newInstance() {
         Outro fragment = new Outro();
-
         return fragment;
     }
 
@@ -23,7 +27,7 @@ public class Outro extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mHandler = new Handler(Looper.getMainLooper());
     }
 
     @Override
@@ -43,12 +47,32 @@ public class Outro extends Fragment {
         getActivity().findViewById(R.id.btn_back_to_lobby).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Intro();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, newFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                redirectToIntro();
             }
         });
+
+        mHandler.postDelayed(myTask, OUTRO_DELAY);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        mHandler.removeCallbacks(myTask);
+    }
+
+    Runnable myTask = new Runnable() {
+        @Override
+        public void run() {
+            redirectToIntro();
+            mHandler.postDelayed(this, OUTRO_DELAY);
+        }
+    };
+
+    private void redirectToIntro() {
+        Fragment newFragment = new Intro();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
