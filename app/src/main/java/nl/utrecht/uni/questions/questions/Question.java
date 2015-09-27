@@ -6,13 +6,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class Question extends Fragment {
+public class Question extends Fragment implements AdapterView.OnItemSelectedListener {
 
     Spinner adverbSelector;
     EditText question;
+    String selectedAdverb;
 
     public static Question newInstance() {
         Question fragment = new Question();
@@ -47,6 +50,10 @@ public class Question extends Fragment {
         adverbSelector = (Spinner) getActivity().findViewById(R.id.adverb_selector);
         question = (EditText) getActivity().findViewById(R.id.question);
 
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.adverbs, R.layout.question_item);
+        adverbSelector.setAdapter(adapter);
+        adverbSelector.setOnItemSelectedListener(this);
+
         getActivity().findViewById(R.id.btn_print).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,5 +64,15 @@ public class Question extends Fragment {
                 transaction.commit();
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        selectedAdverb = (String) parent.getItemAtPosition(position);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
