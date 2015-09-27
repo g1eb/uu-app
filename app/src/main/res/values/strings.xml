@@ -1,6 +1,7 @@
 <resources>
     <!-- Generic -->
     <string name="app_name">Questions</string>
+    <string name="btn_text_back">Terug</string>
 
     <!-- Intro -->
     <string name="question_placeholder">Stel hier je eigen vraag</string>
