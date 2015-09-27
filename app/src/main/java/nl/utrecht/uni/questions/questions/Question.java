@@ -6,9 +6,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 public class Question extends Fragment {
 
+    Spinner adverbSelector;
+    EditText question;
 
     public static Question newInstance() {
         Question fragment = new Question();
@@ -39,6 +43,9 @@ public class Question extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        adverbSelector = (Spinner) getActivity().findViewById(R.id.adverb_selector);
+        question = (EditText) getActivity().findViewById(R.id.question);
 
         getActivity().findViewById(R.id.btn_print).setOnClickListener(new View.OnClickListener() {
             @Override
