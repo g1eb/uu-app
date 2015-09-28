@@ -39,6 +39,6 @@
     <!-- Outro -->
     <string name="outro_title">Gebruiksaanwijzing</string>
     <string name="instruction_text_1">1. Doe één polsbandje om, dan kun je je vraag meenemen en daar later nog eens over nadenken.</string>
-    <string name="instruction_text_2">2. Het tweede polsbandje mag je in de tentoonstelling ophangen, bij het object waar je een vraag over had.</string>
-    <string name="instruction_text_3">3. Als je bij vertrek je polsbandje laat zien aan de receptionist, dan krijg je nog een kleine attentie.</string>
+    <string name="instruction_text_2">2. Het tweede polsbandje mag je in de tentoonstelling ophangen, bij het voorwerp in de tentoonstelling waar je een vraag over had.</string>
+    <string name="instruction_text_3">3. Als je bij vertrek je polsbandje laat zien aan de receptionist bij de ingang, dan krijg je nog een klein cadeautje.</string>
 </resources>
