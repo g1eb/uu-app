@@ -49,4 +49,8 @@ public class Main extends AppCompatActivity {
         // Enforce landscape layout
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
+
+    public void logQuestion(String question) {
+        fbRef.child("questions").push().setValue(question);
+    }
 }
