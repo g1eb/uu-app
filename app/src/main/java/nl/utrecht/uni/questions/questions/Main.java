@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.firebase.client.Firebase;
+
 public class Main extends AppCompatActivity {
+
+    Firebase fbRef; // Firebase reference
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +23,9 @@ public class Main extends AppCompatActivity {
         transaction.replace(R.id.container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
+
+        Firebase.setAndroidContext(this);
+        fbRef = new Firebase("https://uu-app.firebaseio.com/");
     }
 
     @Override
