@@ -23,13 +23,20 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
-        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left|bottom"
         android:layout_marginLeft="50px"
         android:layout_marginBottom="50px"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo1" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_marginLeft="700px"
+        android:layout_marginBottom="50px"
+        android:src="@drawable/logo2" />
 
     <ImageView
         android:id="@+id/video_still"
