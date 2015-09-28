@@ -22,19 +22,20 @@
     <string name="btn_text_print">Print je vraag</string>
     <string name="question_mark">\?</string>
     <string-array name="adverbs">
-        <item>Hoe</item>
-        <item>Wanneer</item>
         <item>Waarom</item>
+        <item>Hoe komt het dat</item>
+        <item>Bestaan er</item>
+        <item>Welke</item>
+        <item>Wie</item>
         <item>Waar</item>
-        <item>Waarmee</item>
-        <item>Waardoor</item>
-        <item>Waarbij</item>
-        <item>Waarin</item>
-        <item>Waarom</item>
-        <item>Waaruit</item>
-        <item>Waarop</item>
-        <item>Waaronder</item>
-        <item>Waarheen</item>
+        <item>Wanneer</item>
+        <item>Hoe groot</item>
+        <item>Hoe veel</item>
+        <item>Wat gebeurt er als</item>
+        <item>Kunnen</item>
+        <item>Hebben</item>
+        <item>Wat zijn</item>
+        <item>Is het echt zo dat</item>
     </string-array>
 
     <!-- Outro -->
