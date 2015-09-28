@@ -57,7 +57,9 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
         getActivity().findViewById(R.id.btn_print).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((Main)getActivity()).logQuestion(selectedAdverb + " " + question.getText() + "?");
+                if ( !question.getText().equals("") ) {
+                    ((Main)getActivity()).logQuestion(selectedAdverb + " " + question.getText() + "?");
+                }
                 redirectToOutro();
             }
         });
