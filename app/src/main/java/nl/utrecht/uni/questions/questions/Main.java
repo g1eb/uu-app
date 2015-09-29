@@ -54,7 +54,13 @@ public class Main extends AppCompatActivity {
         fbRef.child("questions").push().setValue(question);
     }
 
-    public void printLabel(String question) {
+    public void printLabel(final String question) {
         logQuestion(question);
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        new LabelPrinter(question).execute();
+                    }
+                }, 1000);
     }
 }
