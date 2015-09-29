@@ -1,6 +1,14 @@
 package nl.utrecht.uni.questions.questions;
 
 import android.os.AsyncTask;
+import android.util.Log;
+
+import com.zebra.sdk.comm.Connection;
+import com.zebra.sdk.comm.ConnectionException;
+import com.zebra.sdk.comm.TcpConnection;
+import com.zebra.sdk.printer.ZebraPrinter;
+import com.zebra.sdk.printer.ZebraPrinterFactory;
+import com.zebra.sdk.printer.ZebraPrinterLanguageUnknownException;
 
 import java.net.URL;
 
@@ -9,6 +17,8 @@ import java.net.URL;
  */
 public class LabelPrinter extends AsyncTask<URL, Integer, String> {
 
+    Connection conn;
+    ZebraPrinter printer;
     String question;
 
     public LabelPrinter(String question) {
@@ -18,6 +28,23 @@ public class LabelPrinter extends AsyncTask<URL, Integer, String> {
     @Override
     protected String doInBackground(URL... params) {
         try {
+            Log.e("LabelPrinter", "opening connection");
+            conn = new TcpConnection("192.168.1.26", 80);
+            conn.open();
+
+            Log.e("LabelPrinter", "getting printer instance");
+            printer = ZebraPrinterFactory.getInstance(conn);
+
+            Log.e("LabelPrinter", "printing config label");
+            printer.printConfigurationLabel();
+            conn.close();
+        } catch (NumberFormatException e) {
+            Log.e("LabelPrinter", "Port Number Is Invalid");
+            return null;
+        } catch (ConnectionException e) {
+            Log.e("LabelPrinter", "Connection Exception");
+        } catch (ZebraPrinterLanguageUnknownException e) {
+            Log.e("LabelPrinter", "Zebra Printer Language Unknown Exception");
         } catch (Exception e) {
             e.printStackTrace();
         }
