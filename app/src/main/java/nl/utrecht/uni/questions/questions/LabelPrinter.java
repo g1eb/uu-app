@@ -32,12 +32,14 @@ public class LabelPrinter extends AsyncTask<URL, Integer, String> {
             conn = new TcpConnection("192.168.1.26", 80);
             conn.open();
 
-            Log.e("LabelPrinter", "getting printer instance");
-            printer = ZebraPrinterFactory.getInstance(conn);
+            if ( conn.isConnected() ) {
+                Log.e("LabelPrinter", "getting printer instance");
+                printer = ZebraPrinterFactory.getInstance(conn);
 
-            Log.e("LabelPrinter", "printing config label");
-            printer.printConfigurationLabel();
-            conn.close();
+                Log.e("LabelPrinter", "printing config label");
+                printer.printConfigurationLabel();
+                conn.close();
+            }
         } catch (NumberFormatException e) {
             Log.e("LabelPrinter", "Port Number Is Invalid");
             return null;
