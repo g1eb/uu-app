@@ -14,7 +14,7 @@ import android.widget.Spinner;
 public class Question extends Fragment implements AdapterView.OnItemSelectedListener {
 
     Spinner adverbSelector;
-    EditText question;
+    EditText questionInput;
     String selectedAdverb;
 
     public static Question newInstance() {
@@ -48,7 +48,7 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
         super.onActivityCreated(savedInstanceState);
 
         adverbSelector = (Spinner) getActivity().findViewById(R.id.adverb_selector);
-        question = (EditText) getActivity().findViewById(R.id.question);
+        questionInput = (EditText) getActivity().findViewById(R.id.question);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.adverbs, R.layout.question_item);
         adverbSelector.setAdapter(adapter);
@@ -57,8 +57,9 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
         getActivity().findViewById(R.id.btn_print).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ( !question.getText().equals("") ) {
-                    ((Main)getActivity()).logQuestion(selectedAdverb + " " + question.getText() + "?");
+                if ( !questionInput.getText().equals("") ) {
+                    String question = selectedAdverb + " " + questionInput.getText() + "?";
+                    ((Main)getActivity()).printLabel(question);
                 }
                 redirectToOutro();
             }
