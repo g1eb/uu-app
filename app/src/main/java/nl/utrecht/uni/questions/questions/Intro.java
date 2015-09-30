@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class Intro extends Fragment {
 
-    static final int DELAY_QUESTION = 3000; // milliseconds
+    static final int DELAY_QUESTION = 10000; // milliseconds
     Handler mHandler;
 
     TextView exampleQuestion;
