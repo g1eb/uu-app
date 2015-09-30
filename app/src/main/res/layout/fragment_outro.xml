@@ -11,6 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
         android:text="@string/outro_title"
+        android:layout_marginTop="200px"
+        android:paddingLeft="150px"
+        android:paddingRight="150px"
+        android:textSize="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout
@@ -18,30 +22,36 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|center"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingLeft="100px"
+        android:paddingRight="100px">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center"
-            android:paddingBottom="15dp"
+            android:paddingBottom="50px"
+            android:textSize="30dp"
+            android:gravity="start"
             android:text="@string/instruction_text_1"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center"
-            android:paddingBottom="15dp"
+            android:paddingBottom="50px"
+            android:textSize="30dp"
+            android:gravity="start"
             android:text="@string/instruction_text_2"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center"
+            android:textSize="30dp"
             android:text="@string/instruction_text_3"
+            android:gravity="start"
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
