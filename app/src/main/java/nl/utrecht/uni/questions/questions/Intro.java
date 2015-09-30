@@ -65,11 +65,7 @@ public class Intro extends Fragment {
         getActivity().findViewById(R.id.intro_container).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Question();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, newFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                redirectToQuestion();
             }
         });
 
@@ -94,4 +90,12 @@ public class Intro extends Fragment {
             mHandler.postDelayed(this, DELAY_QUESTION);
         }
     };
+
+    private void redirectToQuestion() {
+        Fragment newFragment = new Question();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }
