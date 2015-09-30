@@ -11,8 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginTop="100px"
+        android:layout_marginTop="200px"
+        android:paddingLeft="100px"
+        android:paddingRight="100px"
         android:textSize="50dp"
+        android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
