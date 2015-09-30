@@ -12,18 +12,24 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
         android:layout_marginTop="200px"
-        android:paddingLeft="100px"
-        android:paddingRight="100px"
+        android:paddingLeft="150px"
+        android:paddingRight="150px"
         android:textSize="50dp"
         android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
+    <Button
+        android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center"
         android:text="@string/question_placeholder"
         android:textSize="50dp"
+        android:paddingLeft="100px"
+        android:paddingRight="100px"
+        android:paddingTop="50px"
+        android:paddingBottom="50px"
+        android:background="#ffe600"
         android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 

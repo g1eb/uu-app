@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Intro extends Fragment {
@@ -17,6 +18,7 @@ public class Intro extends Fragment {
     Handler mHandler;
 
     TextView exampleQuestion;
+    Button start;
     String[] questions;
     int qIndex;
 
@@ -63,6 +65,13 @@ public class Intro extends Fragment {
         });
 
         getActivity().findViewById(R.id.intro_container).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirectToQuestion();
+            }
+        });
+
+        getActivity().findViewById(R.id.start_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 redirectToQuestion();
