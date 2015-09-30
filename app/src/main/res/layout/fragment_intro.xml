@@ -23,6 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|center"
         android:text="@string/question_placeholder"
+        android:textSize="50dp"
+        android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
