@@ -6,11 +6,11 @@
     <!-- Intro -->
     <string name="question_placeholder">Stel hier je eigen vraag</string>
     <string-array name="tempting_example_questions">
-        <item>Wat doen die mensentanden in dat koeien-kunstgebit?</item>
-        <item>Zou een gordeldier dunne botjes hebben omdat-ie al zo\'n stevige buitenkant heeft?</item>
+        <item>Wat doen die mensentanden in dat \n koeienkunstgebit?</item>
+        <item>Zou een gordeldier dunne botjes hebben omdat ie al zo\'n stevige buitenkant heeft?</item>
         <item>Heeft een paard evenveel pijn bij de hoefsmid als ik bij de tandarts?</item>
         <item>Groeien er ook haren in het lichaam?</item>
-        <item>Bestaan er beesten met tanden aan de buitenkant van hun lichaam in plaats van in hun mond?</item>
+        <item>Bestaan er beesten met tanden aan de buitenkant van hun lichaam in plaats \nvan in hun mond?</item>
         <item>Lijken graten meer op haren, of meer op botten?</item>
     </string-array>
 
