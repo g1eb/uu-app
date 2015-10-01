@@ -9,11 +9,23 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Outro extends Fragment {
 
-    static final int DELAY_OUTRO = 20000; // milliseconds
+    static final int INSTRUCTION_INTERVAL = 5000; // milliseconds
     Handler mHandler;
+    ImageView instructionImage;
+    TextView instruction;
+    String[] instructions;
+    private int[] instructionImages = new int[]{
+            R.drawable.img_1,
+            R.drawable.img_2,
+            R.drawable.img_3
+    };
+
+    int count;
 
     public static Outro newInstance() {
         Outro fragment = new Outro();
@@ -28,6 +40,7 @@ public class Outro extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mHandler = new Handler(Looper.getMainLooper());
+        count = 0;
     }
 
     @Override
@@ -38,7 +51,7 @@ public class Outro extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        mHandler.removeCallbacks(delayedRedirect);
+        mHandler.removeCallbacks(changeInstructions);
     }
 
     @Override
@@ -52,7 +65,14 @@ public class Outro extends Fragment {
             }
         });
 
-        mHandler.postDelayed(delayedRedirect, DELAY_OUTRO);
+        instructions = getResources().getStringArray(R.array.instructions);
+        instruction = (TextView) getActivity().findViewById(R.id.instruction_text);
+        instruction.setText(instructions[count]);
+
+        instructionImage = (ImageView) getActivity().findViewById(R.id.instruction_image);
+        instructionImage.setImageResource(instructionImages[count]);
+
+        mHandler.postDelayed(changeInstructions, INSTRUCTION_INTERVAL);
     }
 
     @Override
@@ -60,11 +80,17 @@ public class Outro extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    Runnable delayedRedirect = new Runnable() {
+    Runnable changeInstructions = new Runnable() {
         @Override
         public void run() {
-            redirectToIntro();
-            mHandler.postDelayed(this, DELAY_OUTRO);
+            if (count == 2) {
+                redirectToIntro();
+            } else {
+                count++;
+                instruction.setText(instructions[count]);
+                instructionImage.setImageResource(instructionImages[count]);
+                mHandler.postDelayed(this, INSTRUCTION_INTERVAL);
+            }
         }
     };
 
