@@ -9,7 +9,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|top"
+        android:layout_gravity="start|top"
         android:layout_marginTop="200px"
         android:paddingLeft="150px"
         android:paddingRight="150px"
