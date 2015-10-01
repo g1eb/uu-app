@@ -37,6 +37,22 @@
         <item>Wat zijn</item>
         <item>Is het echt zo dat</item>
     </string-array>
+    <string-array name="adverb_explanations">
+        <item>"Waarom" heeft eigenlijk twee betekenissen. "Waardoor" en het ouderwets klinkende "waartoe", wat zoveel betekent als "met welke bedoeling?" Pas als je weet wat je met "waarom" bedoelt kun je een waarom-vraag beantwoorden.</item>
+        <item>Hoe komt het dat..? Hoe-komt-het-dat-vragen stoppen nooit. Hoe komt het dat je haren nooit drie meter worden? Omdat ze op een gegeven moment uitvallen. En hoe komt dat dan weer?</item>
+        <item>Bestaan er ook roze kippen? Die vraag kun je eigenlijk alleen met zekerheid beantwoorden als ze bestaan. Als ze niet bestaan weet je dat niet zeker: misschien heb je niet goed genoeg gezocht.</item>
+        <item>Sommige vragen roepen nieuwe vragen op. Waarom beginngen zoveel vragen met een "W"?</item>
+        <item>Mensen willen vaak weten wie iets heeft gedaan: een uitvinding, een moord, een belangrijke daad. Maar van heel dingen is dat helemaal niet duidelijk. Vaak dragen meerdere mensen een klein beetje bij.</item>
+        <item>Waar is puntje puntje? Of waar komt-ie vandaan? Zulke vragen zijn vaak prima te beantwoorden. Maar niet altijd: Waar begint een wolk? Of waar loopt je nek over in je schouders?</item>
+        <item>Hoe precies wil je het antwoord hebben? Ergens tussen de veertienmiljard jaar geleden en nu is vast correct. Maar vermoedelijk niet het antwoord waar je op zat te wachten.</item>
+        <item>Een olifant is groter dan een muis. Maar is-ie groter dan een reuzeninktvis, van wel 13 meter lang? Of een giraf van 6 meter hoog? Hoe bepaal je grootte?</item>
+        <item>Sommige vragen suggereren al een antwoord. "Hoeveel" en "hoe weinig" betekenen hetzelfde. Maar "Hoeveel hou je van je moeder?" is toch een heel andere vraag dan "Hoe weinig hou je van haar?"</item>
+        <item>Wat gebeurt er als..? Wat-gebeurt-er-als-vragen zijn leuk. Maar wel een beetje onhandig. Er gebeurt zoveel. De volgende vraag is handiger: Gebeurt A als B? Zoals in "Gebeurt er iets met de kleur van je huid als je een jaar lang je handen niet wast?"</item>
+        <item>Lastige vraag. Misschien kunnen ze het wel, maar doen ze het nooit.</item>
+        <item>Een konijn heeft vier poten, een hoofd met twee oren en een lijf. Of is een konijn vier poten, een hoofd met twee oren en een lijf?</item>
+        <item>Pak af en toe een woordenboek of zoek iets op op wikipedia. En als je het dan nog niet weet: gebruik je boerenverstand. Misschien kun je het zelf net zo goed bedenken.</item>
+        <item>Goede vragen beginnen vaak met twijfel. Geloof niet altijd de krant, de leraar of het journaal. Maar vraag je regelmatig af: "Is dat nou echt wel zo?"</item>
+    </string-array>
 
     <!-- Outro -->
     <string name="outro_title">Gebruiksaanwijzing</string>
