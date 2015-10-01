@@ -78,7 +78,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
 
                     // Print the question
                     String question = selectedAdverb + " " + questionInput.getText() + "?";
-                    ((Main) getActivity()).printLabel(question);
+                    ((Main) getActivity()).printQuestion(question);
                 }
                 redirectToOutro();
             }

@@ -50,17 +50,7 @@ public class Main extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
     }
 
-    public void logQuestion(String question) {
+    public void printQuestion(String question) {
         fbRef.child("questions").push().setValue(question);
-    }
-
-    public void printLabel(final String question) {
-        logQuestion(question);
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        new LabelPrinter(question).execute();
-                    }
-                }, 1000);
     }
 }
