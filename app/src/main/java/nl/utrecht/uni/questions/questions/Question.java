@@ -70,6 +70,10 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
             @Override
             public void onClick(View v) {
                 if (!questionInput.getText().equals("")) {
+                    // Hide soft keyboard
+                    ((InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
+
+                    // Print the question
                     String question = selectedAdverb + " " + questionInput.getText() + "?";
                     ((Main) getActivity()).printLabel(question);
                 }
