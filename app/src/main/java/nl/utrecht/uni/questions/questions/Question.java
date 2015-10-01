@@ -49,6 +49,7 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
 
         adverbSelector = (Spinner) getActivity().findViewById(R.id.adverb_selector);
         questionInput = (EditText) getActivity().findViewById(R.id.question);
+        questionInput.setSelected(true);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.adverbs, R.layout.question_item);
         adverbSelector.setAdapter(adapter);
