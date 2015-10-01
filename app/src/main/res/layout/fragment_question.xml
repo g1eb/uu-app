@@ -26,6 +26,7 @@
         android:textColor="#333333"
         android:textSize="82px"
         android:background="@layout/line"
+        android:textCursorDrawable="@layout/cursor"
         android:shadowColor="#333333"
         android:focusable="true" />
 
