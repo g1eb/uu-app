@@ -17,13 +17,15 @@
 
     <EditText
         android:id="@+id/question"
-        android:layout_width="1000px"
+        android:layout_width="1100px"
         android:layout_height="wrap_content"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginLeft="500px"
+        android:layout_marginLeft="480px"
+        android:paddingRight="75px"
         android:inputType="text"
         android:textColor="#333333"
-        android:textSize="75px"
+        android:textSize="82px"
+        android:background="@layout/line"
         android:shadowColor="#333333"
         android:focusable="true" />
 
