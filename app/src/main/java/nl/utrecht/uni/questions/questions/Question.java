@@ -50,13 +50,12 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        adverbs = getResources().getStringArray(R.array.adverbs);
         adverbSelector = (NumberPicker) getActivity().findViewById(R.id.adverb_selector);
         adverbSelector.setMinValue(0);
-        adverbSelector.setMaxValue(5);
+        adverbSelector.setMaxValue(adverbs.length - 1);
         adverbSelector.setFocusable(true);
         adverbSelector.setFocusableInTouchMode(true);
-
-        adverbs = getResources().getStringArray(R.array.adverbs);
         adverbSelector.setDisplayedValues(adverbs);
         adverbSelector.setOnValueChangedListener(this);
 
