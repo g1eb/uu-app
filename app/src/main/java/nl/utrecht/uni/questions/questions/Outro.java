@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +68,7 @@ public class Outro extends Fragment {
 
         instructions = getResources().getStringArray(R.array.instructions);
         instruction = (TextView) getActivity().findViewById(R.id.instruction_text);
-        instruction.setText(instructions[count]);
+        instruction.setText(Html.fromHtml(instructions[count]));
 
         instructionImage = (ImageView) getActivity().findViewById(R.id.instruction_image);
         instructionImage.setImageResource(instructionImages[count]);
@@ -87,7 +88,7 @@ public class Outro extends Fragment {
                 redirectToIntro();
             } else {
                 count++;
-                instruction.setText(instructions[count]);
+                instruction.setText(Html.fromHtml(instructions[count]));
                 instructionImage.setImageResource(instructionImages[count]);
                 mHandler.postDelayed(this, INSTRUCTION_INTERVAL);
             }
