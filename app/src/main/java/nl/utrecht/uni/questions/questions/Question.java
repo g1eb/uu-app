@@ -60,8 +60,6 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
 
         questionInput = (EditText) getActivity().findViewById(R.id.question);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.adverbs, R.layout.question_item);
-
         btnPrint = (Button) getActivity().findViewById(R.id.btn_print);
         btnPrint.setOnClickListener(new View.OnClickListener() {
             @Override
