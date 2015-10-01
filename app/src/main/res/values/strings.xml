@@ -57,8 +57,8 @@
     <!-- Outro -->
     <string name="outro_title">En nu?</string>
     <string-array name="instructions">
-        <item>Doe één polsbandje om, dan kun je je vraag meenemen en daar later nog eens over nadenken.</item>
-        <item>Het tweede polsbandje mag je in de tentoonstelling ophangen, bij het voorwerp waar je een vraag over had. \nDit polsbandje kun je met een knijpertje vastmaken aan de draad op de kasten.</item>
-        <item>Als je bij vertrek je polsbandje laat zien aan de receptionist bij de ingang, dan krijg je nog een klein cadeautje.</item>
+        <item>Je krijgt twee polsbandjes met daarop \njouw vraag.</item>
+        <item>Polsbandje 1 doe je om de pols. \n\nMet het clipje maak je hem vast.\nNog niet klaar met vragenstellen?\n\nLaat dit polsbandje zien bij de \nkassa voor meer tips van Bas \nen een presentje.</item>
+        <item>Polsbandje 2 hang je met het clipje op \nbij het voorwerp waar jouw vraag over \ngaat.\n\nBekijk vooral ook de vragen van andere bezoekers!</item>
     </string-array>
 </resources>
