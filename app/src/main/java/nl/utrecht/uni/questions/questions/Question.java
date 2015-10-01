@@ -71,15 +71,19 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         btnPrint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!questionInput.getText().equals("")) {
+                selectedAdverb = adverbs[adverbSelector.getValue()];
+                String input = questionInput.getText().toString();
+                System.out.println(input);
+                if ( selectedAdverb != null && input != null && !input.equals("")) {
                     // Hide soft keyboard
                     ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
 
                     // Print the question
-                    String question = selectedAdverb + " " + questionInput.getText() + "?";
+                    String question = selectedAdverb + " " + input + "?";
                     ((Main) getActivity()).printQuestion(question);
+
+                    redirectToOutro();
                 }
-                redirectToOutro();
             }
         });
     }
