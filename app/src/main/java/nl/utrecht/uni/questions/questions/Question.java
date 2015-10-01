@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
@@ -74,7 +73,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
             public void onClick(View v) {
                 if (!questionInput.getText().equals("")) {
                     // Hide soft keyboard
-                    ((InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
+                    ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
 
                     // Print the question
                     String question = selectedAdverb + " " + questionInput.getText() + "?";
