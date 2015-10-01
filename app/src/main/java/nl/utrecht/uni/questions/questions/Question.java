@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 
-public class Question extends Fragment implements AdapterView.OnItemSelectedListener {
+public class Question extends Fragment implements NumberPicker.OnValueChangeListener {
 
     NumberPicker adverbSelector;
     EditText questionInput;
@@ -58,6 +58,7 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
 
         adverbs = getResources().getStringArray(R.array.adverbs);
         adverbSelector.setDisplayedValues(adverbs);
+        adverbSelector.setOnValueChangedListener(this);
 
         questionInput = (EditText) getActivity().findViewById(R.id.question);
         questionInput.setSelected(true);
@@ -95,5 +96,10 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
         transaction.replace(R.id.container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+        selectedAdverb = adverbs[newVal];
     }
 }
