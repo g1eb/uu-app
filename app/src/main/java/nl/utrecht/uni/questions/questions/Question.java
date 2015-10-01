@@ -4,6 +4,8 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,9 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 
 public class Question extends Fragment implements NumberPicker.OnValueChangeListener {
+
+    static final int DELAY_IDLE = 60000*5; // milliseconds
+    Handler mHandler;
 
     AdverbPicker adverbSelector;
     EditText questionInput;
@@ -33,7 +38,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mHandler = new Handler(Looper.getMainLooper());
     }
 
     @Override
@@ -44,6 +49,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mHandler.removeCallbacks(delayedRedirect);
     }
 
     @Override
@@ -86,6 +92,25 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
                 }
             }
         });
+
+        // Redirect to intro after a delay
+        mHandler.postDelayed(delayedRedirect, DELAY_IDLE);
+    }
+
+    Runnable delayedRedirect = new Runnable() {
+        @Override
+        public void run() {
+            redirectToIntro();
+            mHandler.postDelayed(this, DELAY_IDLE);
+        }
+    };
+
+    private void redirectToIntro() {
+        Fragment newFragment = new Intro();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     private void redirectToOutro() {
