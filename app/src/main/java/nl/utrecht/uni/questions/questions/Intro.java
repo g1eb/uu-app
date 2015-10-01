@@ -18,7 +18,6 @@ public class Intro extends Fragment {
     Handler mHandler;
 
     TextView exampleQuestion;
-    Button start;
     String[] questions;
     int qIndex;
 
