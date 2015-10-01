@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
-import android.widget.Spinner;
 
 public class Question extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -64,7 +64,8 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
         adverbSelector.setAdapter(adapter);
         adverbSelector.setOnItemSelectedListener(this);
 
-        getActivity().findViewById(R.id.btn_print).setOnClickListener(new View.OnClickListener() {
+        btnPrint = (Button) getActivity().findViewById(R.id.btn_print);
+        btnPrint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if ( !questionInput.getText().equals("") ) {
