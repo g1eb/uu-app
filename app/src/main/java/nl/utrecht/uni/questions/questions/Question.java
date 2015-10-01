@@ -61,6 +61,9 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         adverbSelector.setOnValueChangedListener(this);
 
         questionInput = (EditText) getActivity().findViewById(R.id.question);
+        questionInput.setFocusableInTouchMode(true);
+        questionInput.setFocusable(true);
+        questionInput.requestFocus();
 
         // Bring up the soft keyboard
         ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
