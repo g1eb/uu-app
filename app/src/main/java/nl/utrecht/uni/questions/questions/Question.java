@@ -53,6 +53,8 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
         adverbSelector = (NumberPicker) getActivity().findViewById(R.id.adverb_selector);
         adverbSelector.setMinValue(0);
         adverbSelector.setMaxValue(5);
+        adverbSelector.setFocusable(true);
+        adverbSelector.setFocusableInTouchMode(true);
 
         adverbs = getResources().getStringArray(R.array.adverbs);
         adverbSelector.setDisplayedValues(adverbs);
