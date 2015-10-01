@@ -26,34 +26,19 @@
         android:paddingLeft="100px"
         android:paddingRight="100px">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center"
-            android:gravity="start"
-            android:paddingBottom="50px"
-            android:text="@string/instruction_text_1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#333333"
-            android:textSize="30dp" />
+        <ImageView
+            android:id="@+id/instruction_image"
+            android:layout_width="wrap_content"
+            android:layout_height="400px"
+            android:layout_gravity="start|center"/>
 
         <TextView
+            android:id="@+id/instruction_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|center"
+            android:layout_gravity="end|center"
             android:gravity="start"
             android:paddingBottom="50px"
-            android:text="@string/instruction_text_2"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#333333"
-            android:textSize="30dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center"
-            android:gravity="start"
-            android:text="@string/instruction_text_3"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#333333"
             android:textSize="30dp" />
