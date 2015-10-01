@@ -12,42 +12,44 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
         android:layout_marginTop="200px"
+        android:gravity="center_horizontal"
         android:paddingLeft="150px"
         android:paddingRight="150px"
-        android:textSize="50dp"
-        android:gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:textSize="50dp" />
 
     <Button
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center"
-        android:text="@string/question_placeholder"
         android:layout_marginTop="100px"
-        android:textSize="50dp"
+        android:background="#ffe600"
+        android:gravity="center_horizontal"
+        android:paddingBottom="50px"
         android:paddingLeft="100px"
         android:paddingRight="100px"
         android:paddingTop="50px"
-        android:paddingBottom="50px"
-        android:background="#ffe600"
-        android:gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="@string/question_placeholder"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:textSize="50dp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left|bottom"
-        android:layout_marginLeft="50px"
         android:layout_marginBottom="50px"
+        android:layout_marginLeft="50px"
         android:src="@drawable/logo1" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left|bottom"
-        android:layout_marginLeft="500px"
         android:layout_marginBottom="50px"
+        android:layout_marginLeft="500px"
         android:src="@drawable/logo2" />
 
     <ImageView
@@ -55,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
-        android:layout_marginRight="50px"
         android:layout_marginBottom="50px"
+        android:layout_marginRight="50px"
         android:src="@drawable/video_still" />
 </FrameLayout>

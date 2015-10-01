@@ -10,6 +10,7 @@
         android:layout_width="350dp"
         android:layout_height="match_parent"
         android:layout_gravity="left|center_vertical"
+        android:textColor="#333333"
         android:spinnerMode="dropdown" />
 
     <EditText
@@ -19,6 +20,8 @@
         android:layout_gravity="right|center_vertical"
         android:layout_marginTop="15px"
         android:layout_marginRight="75px"
+        android:inputType="text"
+        android:textColor="#333333"
         android:focusable="true" />
 
     <Button

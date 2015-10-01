@@ -17,13 +17,14 @@
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="75px"
         android:layout_marginRight="75px"
-        android:textSize="30dp"
+        android:background="#ffe600"
+        android:gravity="center_horizontal"
+        android:paddingBottom="30px"
         android:paddingLeft="50px"
         android:paddingRight="50px"
         android:paddingTop="30px"
-        android:paddingBottom="30px"
-        android:background="#ffe600"
-        android:gravity="center_horizontal"
-        android:text="@string/btn_text_skip_video" />
+        android:text="@string/btn_text_skip_video"
+        android:textColor="#333333"
+        android:textSize="30dp" />
 
 </FrameLayout>
