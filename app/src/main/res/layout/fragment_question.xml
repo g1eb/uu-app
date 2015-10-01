@@ -5,10 +5,10 @@
     android:background="#eaeaea"
     tools:context="nl.utrecht.uni.questions.questions.Question">
 
-    <Spinner
+    <NumberPicker
         android:id="@+id/adverb_selector"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
         android:layout_gravity="left|center_vertical"
         android:spinnerMode="dropdown" />
 

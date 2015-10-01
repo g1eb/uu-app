@@ -9,12 +9,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 
 public class Question extends Fragment implements AdapterView.OnItemSelectedListener {
 
-    Spinner adverbSelector;
+    NumberPicker adverbSelector;
     EditText questionInput;
+    Button btnPrint;
+    String[] adverbs;
     String selectedAdverb;
 
     public static Question newInstance() {
@@ -47,7 +50,13 @@ public class Question extends Fragment implements AdapterView.OnItemSelectedList
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        adverbSelector = (Spinner) getActivity().findViewById(R.id.adverb_selector);
+        adverbSelector = (NumberPicker) getActivity().findViewById(R.id.adverb_selector);
+        adverbSelector.setMinValue(0);
+        adverbSelector.setMaxValue(5);
+
+        adverbs = getResources().getStringArray(R.array.adverbs);
+        adverbSelector.setDisplayedValues(adverbs);
+
         questionInput = (EditText) getActivity().findViewById(R.id.question);
         questionInput.setSelected(true);
 
