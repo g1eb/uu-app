@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,33 +59,20 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         adverbSelector.setOnValueChangedListener(this);
 
         questionInput = (EditText) getActivity().findViewById(R.id.question);
-        questionInput.setSelected(true);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.adverbs, R.layout.question_item);
-        adverbSelector.setAdapter(adapter);
-        adverbSelector.setOnItemSelectedListener(this);
 
         btnPrint = (Button) getActivity().findViewById(R.id.btn_print);
         btnPrint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ( !questionInput.getText().equals("") ) {
+                if (!questionInput.getText().equals("")) {
                     String question = selectedAdverb + " " + questionInput.getText() + "?";
-                    ((Main)getActivity()).printLabel(question);
+                    ((Main) getActivity()).printLabel(question);
                 }
                 redirectToOutro();
             }
         });
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        selectedAdverb = (String) parent.getItemAtPosition(position);
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
     }
 
     private void redirectToOutro() {
