@@ -3,6 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textColorPrimary">#333333</item>
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlActivated">#333333</item>
+        <item name="colorControlHighlight">#333333</item>
     </style>
 
 </resources>
