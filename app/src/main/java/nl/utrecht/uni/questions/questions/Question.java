@@ -14,7 +14,7 @@ import android.widget.NumberPicker;
 
 public class Question extends Fragment implements NumberPicker.OnValueChangeListener {
 
-    NumberPicker adverbSelector;
+    AdverbPicker adverbSelector;
     EditText questionInput;
     Button btnPrint;
     String[] adverbs;
@@ -51,7 +51,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         super.onActivityCreated(savedInstanceState);
 
         adverbs = getResources().getStringArray(R.array.adverbs);
-        adverbSelector = (NumberPicker) getActivity().findViewById(R.id.adverb_selector);
+        adverbSelector = (AdverbPicker) getActivity().findViewById(R.id.adverb_selector);
         adverbSelector.setMinValue(0);
         adverbSelector.setMaxValue(adverbs.length - 1);
         adverbSelector.setFocusable(true);
