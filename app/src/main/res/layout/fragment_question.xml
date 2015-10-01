@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="600px"
     android:background="#eaeaea"
     tools:context="nl.utrecht.uni.questions.questions.Question">
 
@@ -17,29 +17,21 @@
         android:layout_width="900dp"
         android:layout_height="wrap_content"
         android:layout_gravity="right|center_vertical"
-        android:layout_marginRight="50dp" />
+        android:layout_marginTop="15px"
+        android:layout_marginRight="75px"
+        android:focusable="true" />
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="right|center_vertical"
-        android:background="#ffe600">
-
-        <TextView
-            android:id="@+id/btn_print"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:text="@string/question_mark"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#333333"
-            android:textSize="400dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_text_print"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textColor="#333333" />
-    </FrameLayout>
+    <Button
+        android:id="@+id/btn_print"
+        android:layout_width="300px"
+        android:layout_height="400px"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="75px"
+        android:layout_marginRight="75px"
+        android:background="#ffe600"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/question_mark"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:textSize="200dp" />
 </FrameLayout>
