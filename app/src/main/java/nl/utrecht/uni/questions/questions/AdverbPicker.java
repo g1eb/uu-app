@@ -33,7 +33,7 @@ public class AdverbPicker extends NumberPicker {
 
         try {
             selectionDivider.setAccessible(true);
-            selectionDivider.set(this, null);
+            selectionDivider.set(this, getResources().getDrawable(R.drawable.divider));
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         } catch (Resources.NotFoundException e) {
@@ -50,5 +50,4 @@ public class AdverbPicker extends NumberPicker {
             ((EditText) child).setTextSize(100);
         }
     }
-
 }
