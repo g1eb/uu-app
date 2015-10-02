@@ -137,6 +137,12 @@ public class Outro extends Fragment {
                         instructionImage3.setVisibility(View.VISIBLE);
                         break;
                     case 3:
+                        instructionText1.setVisibility(View.INVISIBLE);
+                        instructionImage1.setVisibility(View.INVISIBLE);
+                        instructionText2.setVisibility(View.INVISIBLE);
+                        instructionImage2.setVisibility(View.INVISIBLE);
+                        instructionText3.setVisibility(View.INVISIBLE);
+                        instructionImage3.setVisibility(View.INVISIBLE);
                         redirectToIntro();
                         break;
                 }
