@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 public class Question extends Fragment implements NumberPicker.OnValueChangeListener, TextWatcher, TextView.OnEditorActionListener {
 
-    static final int DELAY_IDLE = 60000*5; // milliseconds
+    static final int DELAY_IDLE = 60000; // milliseconds
     Handler mHandler;
 
     AdverbPicker adverbSelector;
