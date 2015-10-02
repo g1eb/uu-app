@@ -19,7 +19,7 @@ public class Outro extends Fragment {
     static final int FADE_OUT_DURATION = 500; // milliseconds
     static final int ANIMATION_DELAY = 7500; // milliseconds
 
-    Animation animationSlideInLeft, animationSlideOutRight;
+    Animation fadeIn, fadeOut;
     TextView instructionText1, instructionText2, instructionText3;
     ImageView instructionImage1, instructionImage2, instructionImage3;
     int currentInstruction;
@@ -70,13 +70,13 @@ public class Outro extends Fragment {
         instructionImage2 = (ImageView) getActivity().findViewById(R.id.instruction_img_2);
         instructionImage3 = (ImageView) getActivity().findViewById(R.id.instruction_img_3);
 
-        animationSlideInLeft = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), android.R.anim.slide_in_left);
-        animationSlideOutRight = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), android.R.anim.slide_out_right);
-        animationSlideInLeft.setDuration(ANIMATION_DURATION);
-        animationSlideOutRight.setDuration(ANIMATION_DURATION);
-        animationSlideOutRight.setStartOffset(ANIMATION_DELAY);
+        fadeIn = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), android.R.anim.fade_in);
+        fadeOut = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), android.R.anim.fade_out);
+        fadeIn.setDuration(FADE_IN_DURATION);
+        fadeOut.setDuration(FADE_OUT_DURATION);
+        fadeOut.setStartOffset(ANIMATION_DELAY);
 
-        animationSlideInLeft.setAnimationListener(new Animation.AnimationListener() {
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -86,16 +86,16 @@ public class Outro extends Fragment {
             public void onAnimationEnd(Animation animation) {
                 switch (currentInstruction) {
                     case 1:
-                        instructionText1.startAnimation(animationSlideOutRight);
-                        instructionImage1.startAnimation(animationSlideOutRight);
+                        instructionText1.startAnimation(fadeOut);
+                        instructionImage1.startAnimation(fadeOut);
                         break;
                     case 2:
-                        instructionText2.startAnimation(animationSlideOutRight);
-                        instructionImage2.startAnimation(animationSlideOutRight);
+                        instructionText2.startAnimation(fadeOut);
+                        instructionImage2.startAnimation(fadeOut);
                         break;
                     case 3:
-                        instructionText3.startAnimation(animationSlideOutRight);
-                        instructionImage3.startAnimation(animationSlideOutRight);
+                        instructionText3.startAnimation(fadeOut);
+                        instructionImage3.startAnimation(fadeOut);
                         break;
                 }
             }
@@ -105,7 +105,7 @@ public class Outro extends Fragment {
 
             }
         });
-        animationSlideOutRight.setAnimationListener(new Animation.AnimationListener() {
+        fadeOut.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -116,8 +116,8 @@ public class Outro extends Fragment {
                 switch (currentInstruction) {
                     case 1:
                         currentInstruction = 2;
-                        instructionText2.startAnimation(animationSlideInLeft);
-                        instructionImage2.startAnimation(animationSlideInLeft);
+                        instructionText2.startAnimation(fadeIn);
+                        instructionImage2.startAnimation(fadeIn);
                         instructionText1.setVisibility(View.INVISIBLE);
                         instructionImage1.setVisibility(View.INVISIBLE);
                         instructionText2.setVisibility(View.VISIBLE);
@@ -127,8 +127,8 @@ public class Outro extends Fragment {
                         break;
                     case 2:
                         currentInstruction = 3;
-                        instructionText3.startAnimation(animationSlideInLeft);
-                        instructionImage3.startAnimation(animationSlideInLeft);
+                        instructionText3.startAnimation(fadeIn);
+                        instructionImage3.startAnimation(fadeIn);
                         instructionText1.setVisibility(View.INVISIBLE);
                         instructionImage1.setVisibility(View.INVISIBLE);
                         instructionText2.setVisibility(View.INVISIBLE);
@@ -155,8 +155,8 @@ public class Outro extends Fragment {
         });
 
         currentInstruction = 1;
-        instructionText1.startAnimation(animationSlideInLeft);
-        instructionImage1.startAnimation(animationSlideInLeft);
+        instructionText1.startAnimation(fadeIn);
+        instructionImage1.startAnimation(fadeIn);
         instructionText1.setVisibility(View.VISIBLE);
         instructionImage1.setVisibility(View.VISIBLE);
     }
