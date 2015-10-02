@@ -15,8 +15,9 @@ import android.widget.TextView;
 
 public class Outro extends Fragment {
 
-    static final int ANIMATION_DURATION = 1000; // milliseconds
-    static final int ANIMATION_DELAY = 5000; // milliseconds
+    static final int FADE_IN_DURATION = 1500; // milliseconds
+    static final int FADE_OUT_DURATION = 500; // milliseconds
+    static final int ANIMATION_DELAY = 7500; // milliseconds
 
     Animation animationSlideInLeft, animationSlideOutRight;
     TextView instructionText1, instructionText2, instructionText3;
