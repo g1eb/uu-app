@@ -50,11 +50,7 @@ public class Intro extends Fragment {
         getActivity().findViewById(R.id.video_still).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Video();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, newFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                redirectToVideo();
             }
         });
 
@@ -201,6 +197,14 @@ public class Intro extends Fragment {
 
     private void redirectToQuestion() {
         Fragment newFragment = new Question();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    private void redirectToVideo() {
+        Fragment newFragment = new Video();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.container, newFragment);
         transaction.addToBackStack(null);
