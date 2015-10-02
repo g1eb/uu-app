@@ -15,11 +15,11 @@
         android:gravity="center_horizontal"
         android:paddingLeft="150px"
         android:paddingRight="150px"
+        android:text="@string/tempting_example_question1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#333333"
-        android:text="@string/tempting_example_question1"
-        android:visibility="invisible"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/example_question2"
@@ -30,11 +30,11 @@
         android:gravity="center_horizontal"
         android:paddingLeft="150px"
         android:paddingRight="150px"
+        android:text="@string/tempting_example_question2"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#333333"
-        android:text="@string/tempting_example_question2"
-        android:visibility="invisible"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/example_question3"
@@ -45,11 +45,11 @@
         android:gravity="center_horizontal"
         android:paddingLeft="150px"
         android:paddingRight="150px"
+        android:text="@string/tempting_example_question3"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#333333"
-        android:text="@string/tempting_example_question3"
-        android:visibility="invisible"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/example_question4"
@@ -60,11 +60,11 @@
         android:gravity="center_horizontal"
         android:paddingLeft="150px"
         android:paddingRight="150px"
+        android:text="@string/tempting_example_question4"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#333333"
-        android:text="@string/tempting_example_question4"
-        android:visibility="invisible"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/example_question5"
@@ -75,11 +75,11 @@
         android:gravity="center_horizontal"
         android:paddingLeft="150px"
         android:paddingRight="150px"
+        android:text="@string/tempting_example_question5"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#333333"
-        android:text="@string/tempting_example_question5"
-        android:visibility="invisible"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/example_question6"
@@ -90,11 +90,11 @@
         android:gravity="center_horizontal"
         android:paddingLeft="150px"
         android:paddingRight="150px"
+        android:text="@string/tempting_example_question6"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#333333"
-        android:text="@string/tempting_example_question6"
-        android:visibility="invisible"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/start_button"
