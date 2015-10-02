@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class Intro extends Fragment {
 
-    static final int ANIMATIOMN_DURATION = 1000; // milliseconds
+    static final int ANIMATION_DURATION = 1000; // milliseconds
     static final int ANIMATION_DELAY = 15000; // milliseconds
 
     TextView currentQuestion, q1, q2, q3, q4, q5, q6;
@@ -81,8 +81,8 @@ public class Intro extends Fragment {
 
         animationSlideInLeft = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), android.R.anim.slide_in_left);
         animationSlideOutRight = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), android.R.anim.slide_out_right);
-        animationSlideInLeft.setDuration(ANIMATIOMN_DURATION);
-        animationSlideOutRight.setDuration(ANIMATIOMN_DURATION);
+        animationSlideInLeft.setDuration(ANIMATION_DURATION);
+        animationSlideOutRight.setDuration(ANIMATION_DURATION);
         animationSlideOutRight.setStartOffset(ANIMATION_DELAY);
         animationSlideInLeft.setAnimationListener(new Animation.AnimationListener() {
             @Override
