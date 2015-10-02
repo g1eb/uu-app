@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +19,7 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-public class Question extends Fragment implements NumberPicker.OnValueChangeListener, TextView.OnEditorActionListener {
+public class Question extends Fragment implements NumberPicker.OnValueChangeListener, TextWatcher, TextView.OnEditorActionListener {
 
     static final int DELAY_IDLE = 60000*5; // milliseconds
     Handler mHandler;
@@ -72,6 +74,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         questionInput.setFocusableInTouchMode(true);
         questionInput.setFocusable(true);
         questionInput.requestFocus();
+        questionInput.addTextChangedListener(this);
         questionInput.setOnEditorActionListener(this);
 
         // Bring up the soft keyboard
@@ -132,6 +135,22 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
         selectedAdverb = adverbs[newVal];
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        mHandler.removeCallbacks(delayedRedirect);
+        mHandler.postDelayed(delayedRedirect, DELAY_IDLE);
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
     }
 
     @Override
