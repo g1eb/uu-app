@@ -54,9 +54,7 @@
 
     <!-- Outro -->
     <string name="outro_title">En nu?</string>
-    <string-array name="instructions">
-        <item><![CDATA[Je krijgt twee polsbandjes met daarop \njouw vraag.]]></item>
-        <item><![CDATA[<b>Polsbandje 1</b> doe je om de pols. <br/><br/>Met het clipje maak je hem vast.\nNog niet klaar met vragenstellen?<br/><br/>Laat dit polsbandje zien bij de \nkassa voor meer tips van Bas \nen een presentje.]]></item>
-        <item><![CDATA[<b>Polsbandje 2</b> hang je met het clipje op \nbij het voorwerp waar jouw vraag over \ngaat.<br/><br/>Bekijk vooral ook de vragen van andere bezoekers!]]></item>
-    </string-array>
+    <string name="instruction_text1"><![CDATA[Je krijgt twee polsbandjes met daarop \njouw vraag.]]></string>
+    <string name="instruction_text2"><![CDATA[<b>Polsbandje 1</b> doe je om de pols. <br/><br/>Met het clipje maak je hem vast.\nNog niet klaar met vragenstellen?<br/><br/>Laat dit polsbandje zien bij de \nkassa voor meer tips van Bas \nen een presentje.]]></string>
+    <string name="instruction_text3"><![CDATA[<b>Polsbandje 2</b> hang je met het clipje op \nbij het voorwerp waar jouw vraag over \ngaat.<br/><br/>Bekijk vooral ook de vragen van andere bezoekers!]]></string>
 </resources>
