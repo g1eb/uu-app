@@ -9,17 +9,18 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class Intro extends Fragment {
 
-    static final int DELAY_QUESTION = 10000; // milliseconds
-    Handler mHandler;
+    static final int ANIMATIOMN_DURATION = 1000; // milliseconds
+    static final int ANIMATION_DELAY = 15000; // milliseconds
 
-    TextView exampleQuestion;
-    String[] questions;
-    int qIndex;
+    TextView currentQuestion, q1, q2, q3, q4, q5, q6;
+    Animation animationSlideInLeft, animationSlideOutRight;
 
     public static Intro newInstance() {
         Intro fragment = new Intro();
@@ -33,8 +34,6 @@ public class Intro extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mHandler = new Handler(Looper.getMainLooper());
-        qIndex = 0;
     }
 
     @Override
@@ -45,7 +44,6 @@ public class Intro extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        mHandler.removeCallbacks(changeQuestion);
     }
 
     @Override
@@ -77,27 +75,134 @@ public class Intro extends Fragment {
             }
         });
 
-        // Setup tempting example question
-        questions = getResources().getStringArray(R.array.tempting_example_questions);
-        exampleQuestion = (TextView) getActivity().findViewById(R.id.tempting_example_question);
-        exampleQuestion.setText(questions[qIndex]);
-        mHandler.postDelayed(changeQuestion, DELAY_QUESTION);
+        q1 = (TextView) getActivity().findViewById(R.id.example_question1);
+        q2 = (TextView) getActivity().findViewById(R.id.example_question2);
+        q3 = (TextView) getActivity().findViewById(R.id.example_question3);
+        q4 = (TextView) getActivity().findViewById(R.id.example_question4);
+        q5 = (TextView) getActivity().findViewById(R.id.example_question5);
+        q6 = (TextView) getActivity().findViewById(R.id.example_question6);
+
+        animationSlideInLeft = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+                android.R.anim.slide_in_left);
+        animationSlideOutRight = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+                android.R.anim.slide_out_right);
+        animationSlideInLeft.setDuration(ANIMATIOMN_DURATION);
+        animationSlideOutRight.setDuration(ANIMATIOMN_DURATION);
+        animationSlideOutRight.setStartOffset(ANIMATION_DELAY);
+        animationSlideInLeft.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if (currentQuestion == q1) {
+                    q1.startAnimation(animationSlideOutRight);
+                } else if (currentQuestion == q2) {
+                    q2.startAnimation(animationSlideOutRight);
+                } else if (currentQuestion == q3) {
+                    q3.startAnimation(animationSlideOutRight);
+                } else if (currentQuestion == q4) {
+                    q4.startAnimation(animationSlideOutRight);
+                } else if (currentQuestion == q5) {
+                    q5.startAnimation(animationSlideOutRight);
+                } else if (currentQuestion == q6) {
+                    q6.startAnimation(animationSlideOutRight);
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        animationSlideOutRight.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if (currentQuestion == q1) {
+                    currentQuestion = q2;
+                    q2.startAnimation(animationSlideInLeft);
+                    q1.setVisibility(View.INVISIBLE);
+                    q2.setVisibility(View.VISIBLE);
+                    q3.setVisibility(View.INVISIBLE);
+                    q4.setVisibility(View.INVISIBLE);
+                    q5.setVisibility(View.INVISIBLE);
+                    q6.setVisibility(View.INVISIBLE);
+                } else if (currentQuestion == q2) {
+                    currentQuestion = q3;
+                    q3.startAnimation(animationSlideInLeft);
+                    q1.setVisibility(View.INVISIBLE);
+                    q2.setVisibility(View.INVISIBLE);
+                    q3.setVisibility(View.VISIBLE);
+                    q4.setVisibility(View.INVISIBLE);
+                    q5.setVisibility(View.INVISIBLE);
+                    q6.setVisibility(View.INVISIBLE);
+                } else if (currentQuestion == q3) {
+                    currentQuestion = q4;
+                    q4.startAnimation(animationSlideInLeft);
+                    q1.setVisibility(View.INVISIBLE);
+                    q2.setVisibility(View.INVISIBLE);
+                    q3.setVisibility(View.INVISIBLE);
+                    q4.setVisibility(View.VISIBLE);
+                    q5.setVisibility(View.INVISIBLE);
+                    q6.setVisibility(View.INVISIBLE);
+                } else if (currentQuestion == q4) {
+                    currentQuestion = q5;
+                    q5.startAnimation(animationSlideInLeft);
+                    q1.setVisibility(View.INVISIBLE);
+                    q2.setVisibility(View.INVISIBLE);
+                    q3.setVisibility(View.INVISIBLE);
+                    q4.setVisibility(View.INVISIBLE);
+                    q5.setVisibility(View.VISIBLE);
+                    q6.setVisibility(View.INVISIBLE);
+                } else if (currentQuestion == q5) {
+                    currentQuestion = q6;
+                    q6.startAnimation(animationSlideInLeft);
+                    q1.setVisibility(View.INVISIBLE);
+                    q2.setVisibility(View.INVISIBLE);
+                    q3.setVisibility(View.INVISIBLE);
+                    q4.setVisibility(View.INVISIBLE);
+                    q5.setVisibility(View.INVISIBLE);
+                    q6.setVisibility(View.VISIBLE);
+                } else if (currentQuestion == q6) {
+                    currentQuestion = q1;
+                    q1.startAnimation(animationSlideInLeft);
+                    q1.setVisibility(View.VISIBLE);
+                    q2.setVisibility(View.INVISIBLE);
+                    q3.setVisibility(View.INVISIBLE);
+                    q4.setVisibility(View.INVISIBLE);
+                    q5.setVisibility(View.INVISIBLE);
+                    q6.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        currentQuestion = q1;
+        q1.startAnimation(animationSlideInLeft);
+        q1.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        q1.clearAnimation();
+        q2.clearAnimation();
+        q3.clearAnimation();
+        q4.clearAnimation();
+        q5.clearAnimation();
+        q6.clearAnimation();
     }
-
-    Runnable changeQuestion = new Runnable() {
-        @Override
-        public void run() {
-            // Update example question
-            qIndex = ( qIndex == 5 ) ? 0 : qIndex;
-            exampleQuestion.setText(questions[qIndex++]);
-            mHandler.postDelayed(this, DELAY_QUESTION);
-        }
-    };
 
     private void redirectToQuestion() {
         Fragment newFragment = new Question();
