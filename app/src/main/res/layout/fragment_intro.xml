@@ -7,7 +7,7 @@
     tools:context="nl.utrecht.uni.questions.questions.Intro">
 
     <TextView
-        android:id="@+id/tempting_example_question"
+        android:id="@+id/example_question1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
@@ -17,6 +17,83 @@
         android:paddingRight="150px"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#333333"
+        android:text="@string/tempting_example_question1"
+        android:visibility="invisible"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/example_question2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="200px"
+        android:gravity="center_horizontal"
+        android:paddingLeft="150px"
+        android:paddingRight="150px"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:text="@string/tempting_example_question2"
+        android:visibility="invisible"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/example_question3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="200px"
+        android:gravity="center_horizontal"
+        android:paddingLeft="150px"
+        android:paddingRight="150px"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:text="@string/tempting_example_question3"
+        android:visibility="invisible"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/example_question4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="200px"
+        android:gravity="center_horizontal"
+        android:paddingLeft="150px"
+        android:paddingRight="150px"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:text="@string/tempting_example_question4"
+        android:visibility="invisible"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/example_question5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="200px"
+        android:gravity="center_horizontal"
+        android:paddingLeft="150px"
+        android:paddingRight="150px"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:text="@string/tempting_example_question5"
+        android:visibility="invisible"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/example_question6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="200px"
+        android:gravity="center_horizontal"
+        android:paddingLeft="150px"
+        android:paddingRight="150px"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:text="@string/tempting_example_question6"
+        android:visibility="invisible"
         android:textSize="50dp" />
 
     <Button
