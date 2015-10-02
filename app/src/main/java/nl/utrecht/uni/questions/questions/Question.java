@@ -6,13 +6,16 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 
 public class Question extends Fragment implements NumberPicker.OnValueChangeListener {
 
@@ -69,6 +72,17 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         questionInput.setFocusableInTouchMode(true);
         questionInput.setFocusable(true);
         questionInput.requestFocus();
+
+        // Print question on press 'done' on soft keyboard
+        questionInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    sendQuestion();
+                }
+                return false;
+            }
+        });
 
         // Bring up the soft keyboard
         ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
