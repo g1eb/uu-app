@@ -5,14 +5,12 @@
 
     <!-- Intro -->
     <string name="question_placeholder">Stel hier je eigen vraag</string>
-    <string-array name="tempting_example_questions">
-        <item>Wat doen die mensentanden in dat \n koeienkunstgebit?</item>
-        <item>Zou een gordeldier dunne botjes hebben omdat ie al zo\'n stevige buitenkant heeft?</item>
-        <item>Heeft een paard evenveel pijn bij de hoefsmid als ik bij de tandarts?</item>
-        <item>Groeien er ook haren in het lichaam?</item>
-        <item>Bestaan er beesten met tanden aan de buitenkant van hun lichaam in plaats \nvan in hun mond?</item>
-        <item>Lijken graten meer op haren, of meer op botten?</item>
-    </string-array>
+    <string name="tempting_example_question1">Wat doen die mensentanden in dat \n koeienkunstgebit?</string>
+    <string name="tempting_example_question2">Zou een gordeldier dunne botjes hebben omdat ie al zo\'n stevige buitenkant heeft?</string>
+    <string name="tempting_example_question3">Heeft een paard evenveel pijn bij de hoefsmid als ik bij de tandarts?</string>
+    <string name="tempting_example_question4">Groeien er ook haren in het lichaam?</string>
+    <string name="tempting_example_question5">Bestaan er beesten met tanden aan de buitenkant van hun lichaam in plaats \nvan in hun mond?</string>
+    <string name="tempting_example_question6">Lijken graten meer op haren, of meer op botten?</string>
 
     <!-- Video -->
     <string name="video_placeholder">Video will be here</string>
