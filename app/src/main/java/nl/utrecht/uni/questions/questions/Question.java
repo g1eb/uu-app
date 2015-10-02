@@ -77,24 +77,28 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         btnPrint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedAdverb = adverbs[adverbSelector.getValue()];
-                String input = questionInput.getText().toString();
-                System.out.println(input);
-                if ( selectedAdverb != null && input != null && !input.equals("")) {
-                    // Hide soft keyboard
-                    ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
-
-                    // Print the question
-                    String question = selectedAdverb + " " + input + "?";
-                    ((Main) getActivity()).printQuestion(question);
-
-                    redirectToOutro();
-                }
+                sendQuestion();
             }
         });
 
         // Redirect to intro after a delay
         mHandler.postDelayed(delayedRedirect, DELAY_IDLE);
+    }
+
+    private void sendQuestion() {
+        selectedAdverb = adverbs[adverbSelector.getValue()];
+        String input = questionInput.getText().toString();
+        System.out.println(input);
+        if ( selectedAdverb != null && input != null && !input.equals("")) {
+            // Hide soft keyboard
+            ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
+
+            // Print the question
+            String question = selectedAdverb + " " + input + "?";
+            ((Main) getActivity()).printQuestion(question);
+
+            redirectToOutro();
+        }
     }
 
     Runnable delayedRedirect = new Runnable() {
