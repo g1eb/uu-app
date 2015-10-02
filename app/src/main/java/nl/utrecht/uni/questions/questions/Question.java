@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-public class Question extends Fragment implements NumberPicker.OnValueChangeListener {
+public class Question extends Fragment implements NumberPicker.OnValueChangeListener, TextView.OnEditorActionListener {
 
     static final int DELAY_IDLE = 60000*5; // milliseconds
     Handler mHandler;
@@ -72,17 +72,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         questionInput.setFocusableInTouchMode(true);
         questionInput.setFocusable(true);
         questionInput.requestFocus();
-
-        // Print question on press 'done' on soft keyboard
-        questionInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    sendQuestion();
-                }
-                return false;
-            }
-        });
+        questionInput.setOnEditorActionListener(this);
 
         // Bring up the soft keyboard
         ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
@@ -142,5 +132,15 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
         selectedAdverb = adverbs[newVal];
+    }
+
+    @Override
+    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        mHandler.removeCallbacks(delayedRedirect);
+        mHandler.postDelayed(delayedRedirect, DELAY_IDLE);
+        if (actionId == EditorInfo.IME_ACTION_DONE) {
+            sendQuestion();
+        }
+        return false;
     }
 }
