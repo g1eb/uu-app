@@ -96,7 +96,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         selectedAdverb = adverbs[adverbSelector.getValue()];
         String input = questionInput.getText().toString();
         System.out.println(input);
-        if ( selectedAdverb != null && input != null && !input.equals("")) {
+        if (selectedAdverb != null && input != null && !input.equals("")) {
             // Hide soft keyboard
             ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
 
@@ -134,6 +134,8 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
 
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+        mHandler.removeCallbacks(delayedRedirect);
+        mHandler.postDelayed(delayedRedirect, DELAY_IDLE);
         selectedAdverb = adverbs[newVal];
     }
 
