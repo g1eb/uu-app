@@ -97,8 +97,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         String input = questionInput.getText().toString();
         System.out.println(input);
         if (selectedAdverb != null && input != null && !input.equals("")) {
-            // Hide soft keyboard
-            ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
+            hideKeyboard();
 
             // Print the question
             String question = selectedAdverb + " " + input + "?";
@@ -111,9 +110,14 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     Runnable delayedRedirect = new Runnable() {
         @Override
         public void run() {
+            hideKeyboard();
             redirectToIntro();
             mHandler.postDelayed(this, DELAY_IDLE);
         }
+    };
+
+    private void hideKeyboard() {
+        ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(questionInput.getWindowToken(), 0);
     };
 
     private void redirectToIntro() {
