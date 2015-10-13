@@ -1,8 +1,12 @@
 package nl.utrecht.uni.questions.questions;
 
+import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -92,17 +96,24 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         mHandler.postDelayed(delayedRedirect, DELAY_IDLE);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void sendQuestion() {
         selectedAdverb = adverbs[adverbSelector.getValue()];
-        String input = questionInput.getText().toString();
+        final String input = questionInput.getText().toString();
         if (selectedAdverb != null && input != null && !input.equals("")) {
-            hideKeyboard();
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setView(R.layout.dialog);
+            builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    hideKeyboard();
 
-            // Print the question
-            String question = selectedAdverb + " " + input + "?";
-            ((Main) getActivity()).setQuestion(question);
+                    String question = selectedAdverb + " " + input + "?";
+                    ((Main) getActivity()).setQuestion(question);
 
-            redirectToOutro();
+                    redirectToOutro();
+                }})
+            .setNegativeButton(android.R.string.no, null);
+            builder.show();
         }
     }
 
