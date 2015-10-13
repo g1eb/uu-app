@@ -32,6 +32,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     Button btnPrint;
     String[] adverbs;
     String selectedAdverb;
+    AlertDialog dialog;
 
     public static Question newInstance() {
         Question fragment = new Question();
@@ -100,15 +101,16 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         selectedAdverb = adverbs[adverbSelector.getValue()];
         final String input = questionInput.getText().toString();
         if (selectedAdverb != null && input != null && !input.equals("")) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             LayoutInflater inflater = getActivity().getLayoutInflater();
             View view = inflater.inflate(R.layout.dialog, null);
             builder.setView(view);
-            final AlertDialog dialog = builder.create();
+            dialog = builder.show();
 
             view.findViewById(R.id.dialog_btn_confirm).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    dialog.dismiss();
                     hideKeyboard();
 
                     String question = selectedAdverb + " " + input + "?";
@@ -124,7 +126,6 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
                     dialog.dismiss();
                 }
             });
-            builder.show();
         }
     }
 
