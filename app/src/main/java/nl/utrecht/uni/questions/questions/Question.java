@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -102,17 +101,29 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
         final String input = questionInput.getText().toString();
         if (selectedAdverb != null && input != null && !input.equals("")) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setView(R.layout.dialog);
-            builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
+            LayoutInflater inflater = getActivity().getLayoutInflater();
+            View view = inflater.inflate(R.layout.dialog, null);
+            builder.setView(view);
+            final AlertDialog dialog = builder.create();
+
+            view.findViewById(R.id.dialog_btn_confirm).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
                     hideKeyboard();
 
                     String question = selectedAdverb + " " + input + "?";
                     ((Main) getActivity()).setQuestion(question);
 
                     redirectToOutro();
-                }})
-            .setNegativeButton(android.R.string.no, null);
+                }
+            });
+
+            view.findViewById(R.id.dialog_btn_cancel).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
             builder.show();
         }
     }
