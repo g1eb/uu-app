@@ -4,6 +4,8 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +21,17 @@ public class Outro extends Fragment {
     static final int FADE_IN_DURATION = 1500; // milliseconds
     static final int FADE_OUT_DURATION = 500; // milliseconds
     static final int ANIMATION_DELAY = 7500; // milliseconds
+    static final int PROGRESS_BAR_MAX = 300;
+    static final int PROGRESS_BAR_UPDATE_DELAY = 75; //milliseconds
 
     Animation fadeIn, fadeOut;
     TextView step, instructionText1, instructionText2, instructionText3;
     ImageView instructionImage1, instructionImage2, instructionImage3;
     int currentInstruction;
 
-    private ProgressBar progress;
+    private ProgressBar progressBar;
+    Handler mHandler;
+    int progress;
 
     public static Outro newInstance() {
         Outro fragment = new Outro();
@@ -39,6 +45,7 @@ public class Outro extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mHandler = new Handler(Looper.getMainLooper());
     }
 
     @Override
@@ -49,15 +56,17 @@ public class Outro extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mHandler.removeCallbacks(SmoothIncrement);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        progress = 0;
         step = (TextView) getActivity().findViewById(R.id.outro_step);
-        progress = (ProgressBar) getActivity().findViewById(R.id.progress);
-        progress.setProgress(100/3*1);
+        progressBar = (ProgressBar) getActivity().findViewById(R.id.progress);
+        progressBar.setMax(PROGRESS_BAR_MAX);
 
         instructionText1 = (TextView) getActivity().findViewById(R.id.instruction_text_1);
         instructionText1.setText(Html.fromHtml(getResources().getString(R.string.instruction_text1)));
@@ -115,7 +124,6 @@ public class Outro extends Fragment {
             public void onAnimationEnd(Animation animation) {
                 switch (currentInstruction) {
                     case 1:
-                        progress.setProgress(100/3*2);
                         step.setText(R.string.step_text2);
                         currentInstruction = 2;
                         instructionText2.startAnimation(fadeIn);
@@ -128,7 +136,6 @@ public class Outro extends Fragment {
                         instructionImage3.setVisibility(View.INVISIBLE);
                         break;
                     case 2:
-                        progress.setProgress(100);
                         step.setText(R.string.step_text3);
                         currentInstruction = 3;
                         instructionText3.startAnimation(fadeIn);
@@ -164,7 +171,19 @@ public class Outro extends Fragment {
         instructionImage1.startAnimation(fadeIn);
         instructionText1.setVisibility(View.VISIBLE);
         instructionImage1.setVisibility(View.VISIBLE);
+
+        mHandler.postDelayed(SmoothIncrement, PROGRESS_BAR_UPDATE_DELAY);
     }
+
+    Runnable SmoothIncrement = new Runnable() {
+        @Override
+        public void run() {
+            if (progressBar != null) {
+                progressBar.setProgress(progress++);
+            }
+            mHandler.postDelayed(this, PROGRESS_BAR_UPDATE_DELAY);
+        }
+    };
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
