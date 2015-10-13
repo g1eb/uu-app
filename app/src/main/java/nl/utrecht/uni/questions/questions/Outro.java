@@ -20,7 +20,7 @@ public class Outro extends Fragment {
     static final int ANIMATION_DELAY = 7500; // milliseconds
 
     Animation fadeIn, fadeOut;
-    TextView instructionText1, instructionText2, instructionText3;
+    TextView step, instructionText1, instructionText2, instructionText3;
     ImageView instructionImage1, instructionImage2, instructionImage3;
     int currentInstruction;
 
@@ -51,6 +51,8 @@ public class Outro extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        step = (TextView) getActivity().findViewById(R.id.outro_step);
 
         instructionText1 = (TextView) getActivity().findViewById(R.id.instruction_text_1);
         instructionText1.setText(Html.fromHtml(getResources().getString(R.string.instruction_text1)));
@@ -108,6 +110,7 @@ public class Outro extends Fragment {
             public void onAnimationEnd(Animation animation) {
                 switch (currentInstruction) {
                     case 1:
+                        step.setText(R.string.step_text2);
                         currentInstruction = 2;
                         instructionText2.startAnimation(fadeIn);
                         instructionImage2.startAnimation(fadeIn);
@@ -119,6 +122,7 @@ public class Outro extends Fragment {
                         instructionImage3.setVisibility(View.INVISIBLE);
                         break;
                     case 2:
+                        step.setText(R.string.step_text3);
                         currentInstruction = 3;
                         instructionText3.startAnimation(fadeIn);
                         instructionImage3.startAnimation(fadeIn);
