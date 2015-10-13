@@ -14,6 +14,7 @@ import com.firebase.client.Firebase;
 public class Main extends AppCompatActivity {
 
     Firebase fbRef; // Firebase reference
+    String question;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class Main extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
     }
 
-    public void printQuestion(String question) {
-        fbRef.child("questions").push().setValue(question);
+    public void setQuestion(String question) {
+        this.question = question;
     }
 }
