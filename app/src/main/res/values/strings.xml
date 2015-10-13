@@ -52,6 +52,11 @@
         <item>Goede vragen beginnen vaak met twijfel. Geloof niet altijd de krant, de leraar of het journaal. Maar vraag je regelmatig af: "Is dat nou echt wel zo?"</item>
     </string-array>
 
+    <!-- Dialog -->
+    <string name="dialog_text">Weet je zeker dat je deze vraag wilt stellen?</string>
+    <string name="dialog_cancel">Nee</string>
+    <string name="dialog_confirm">Ja</string>
+
     <!-- Outro -->
     <string name="outro_title">En nu?</string>
     <string name="instruction_text1"><![CDATA[Je krijgt twee polsbandjes met daarop \njouw vraag.]]></string>
