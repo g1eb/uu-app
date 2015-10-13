@@ -95,7 +95,6 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     private void sendQuestion() {
         selectedAdverb = adverbs[adverbSelector.getValue()];
         String input = questionInput.getText().toString();
-        System.out.println(input);
         if (selectedAdverb != null && input != null && !input.equals("")) {
             hideKeyboard();
 
