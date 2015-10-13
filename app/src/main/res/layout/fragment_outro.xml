@@ -16,6 +16,18 @@
         android:textColor="#333333"
         android:textSize="50dp" />
 
+    <TextView
+        android:id="@+id/outro_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="100px"
+        android:paddingRight="150px"
+        android:text="@string/step_text1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:textSize="50dp" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
