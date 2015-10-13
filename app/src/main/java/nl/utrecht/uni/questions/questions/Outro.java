@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class Outro extends Fragment {
@@ -23,6 +24,8 @@ public class Outro extends Fragment {
     TextView step, instructionText1, instructionText2, instructionText3;
     ImageView instructionImage1, instructionImage2, instructionImage3;
     int currentInstruction;
+
+    private ProgressBar progress;
 
     public static Outro newInstance() {
         Outro fragment = new Outro();
@@ -53,6 +56,8 @@ public class Outro extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         step = (TextView) getActivity().findViewById(R.id.outro_step);
+        progress = (ProgressBar) getActivity().findViewById(R.id.progress);
+        progress.setProgress(100/3*1);
 
         instructionText1 = (TextView) getActivity().findViewById(R.id.instruction_text_1);
         instructionText1.setText(Html.fromHtml(getResources().getString(R.string.instruction_text1)));
@@ -110,6 +115,7 @@ public class Outro extends Fragment {
             public void onAnimationEnd(Animation animation) {
                 switch (currentInstruction) {
                     case 1:
+                        progress.setProgress(100/3*2);
                         step.setText(R.string.step_text2);
                         currentInstruction = 2;
                         instructionText2.startAnimation(fadeIn);
@@ -122,6 +128,7 @@ public class Outro extends Fragment {
                         instructionImage3.setVisibility(View.INVISIBLE);
                         break;
                     case 2:
+                        progress.setProgress(100);
                         step.setText(R.string.step_text3);
                         currentInstruction = 3;
                         instructionText3.startAnimation(fadeIn);
