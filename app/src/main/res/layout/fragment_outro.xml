@@ -92,22 +92,5 @@
             android:visibility="invisible"
             android:textSize="30dp" />
     </FrameLayout>
-
-    <Button
-        android:id="@+id/btn_back_to_lobby"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="75px"
-        android:layout_marginRight="75px"
-        android:background="#ffe600"
-        android:gravity="center_horizontal"
-        android:paddingBottom="50px"
-        android:paddingLeft="100px"
-        android:paddingRight="100px"
-        android:paddingTop="50px"
-        android:text="@string/btn_text_back"
-        android:textColor="#333333"
-        android:textSize="50dp" />
-
+    
 </FrameLayout>

@@ -52,13 +52,6 @@ public class Outro extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        getActivity().findViewById(R.id.btn_back_to_lobby).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                redirectToIntro();
-            }
-        });
-
         instructionText1 = (TextView) getActivity().findViewById(R.id.instruction_text_1);
         instructionText1.setText(Html.fromHtml(getResources().getString(R.string.instruction_text1)));
         instructionText2 = (TextView) getActivity().findViewById(R.id.instruction_text_2);
