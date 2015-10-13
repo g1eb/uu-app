@@ -132,6 +132,9 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     Runnable delayedRedirect = new Runnable() {
         @Override
         public void run() {
+            if ( dialog != null ) {
+                dialog.dismiss();
+            }
             hideKeyboard();
             redirectToIntro();
             mHandler.postDelayed(this, DELAY_IDLE);
