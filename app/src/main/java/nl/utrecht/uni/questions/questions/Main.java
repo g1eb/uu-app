@@ -62,4 +62,10 @@ public class Main extends AppCompatActivity {
     public void setQuestion(String question) {
         this.question = question;
     }
+
+    public void printQuestion() {
+        if (question != null && !question.equals("")) {
+            fbRef.child("questions").push().setValue(question);
+        }
+    }
 }
