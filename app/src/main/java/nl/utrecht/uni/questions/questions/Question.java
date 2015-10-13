@@ -24,7 +24,7 @@ import android.widget.TextView;
 
 public class Question extends Fragment implements NumberPicker.OnValueChangeListener, TextWatcher, TextView.OnEditorActionListener {
 
-    static final int DELAY_IDLE = 60000*2; // milliseconds
+    static final int DELAY_IDLE = 60000 * 2; // milliseconds
     Handler mHandler;
 
     AdverbPicker adverbSelector;
@@ -132,7 +132,7 @@ public class Question extends Fragment implements NumberPicker.OnValueChangeList
     Runnable delayedRedirect = new Runnable() {
         @Override
         public void run() {
-            if ( dialog != null ) {
+            if (dialog != null) {
                 dialog.dismiss();
             }
             hideKeyboard();
